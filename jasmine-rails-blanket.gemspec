@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email = ["delpha@computer.org"]
   spec.description = %q{Adds support to jasmine-rails for blanketjs}
   spec.summary = %q{This gem adds support for running blanketjs code coverage to jasmine-rails}
-  spec.homepage = ""
+  spec.homepage = "https://github.com/lightman76/jasmine-rails-blanket"
   spec.license = "MIT"
 
   spec.files = `git ls-files`.split($/)
