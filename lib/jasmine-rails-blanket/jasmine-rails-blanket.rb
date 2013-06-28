@@ -14,13 +14,10 @@ JasmineRails.class_eval do
     def get_blanketjs_options
       blanket_js=jasmine_config['blanketjs_coverage']
       opts=' '
-      if blanket_js
-        if blanket_js['enabled']
-          blanket_js.keys.each do |key|
-            if key != 'enabled'
-              opts+="data-#{key}='#{blanket_js[key]}' "
-            end
-          end
+      if blanket_js && blanket_js['enabled'] && blanket_js['config']
+        config=blanket_js['config']
+        config.keys.each do |key|
+          opts+="data-#{key}='#{config[key]}' "
         end
       end
       return opts

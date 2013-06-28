@@ -25,14 +25,15 @@ Add the following to your jasmine.yml file
       enabled: true
 
 You can also include any of the config items supported by blanketjs (see blanket's [config.js](https://github.com/alex-seville/blanket/blob/master/src/config.js)
-for options) - just leave off the 'data-' prefixes in the yml config
+for options) - just leave off the 'data-' prefixes and add them to a config key under the blanketjs_coverage key
 
 Example:
 
     blanketjs_coverage:
       enabled: true
-      cover-only: "assets_dev/app/"
-      cover-flags: "debug"
+      config:
+        cover-only: "assets_dev/app/"
+        cover-flags: "debug"
 
 
 ## Contributing
