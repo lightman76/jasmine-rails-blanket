@@ -11,20 +11,19 @@ JasmineRails.class_eval do
       return false
     end
 
-    def get_blanketjs_option(opt)
+    def get_blanketjs_options
       blanket_js=jasmine_config['blanketjs_coverage']
+      opts=' '
       if blanket_js
-        return blanket_js[opt]
+        if blanket_js['enabled']
+          blanket_js.keys.each do |key|
+            if key != 'enabled'
+              opts+="data-#{key}='#{blanket_js[key]}' "
+            end
+          end
+        end
       end
-      return nil
-    end
-
-    def blanketjs_coverage_path
-      return get_blanketjs_option('coverage_path')
-    end
-
-    def blanketjs_flags
-      return get_blanketjs_option('flags')
+      return opts
     end
   end
 end

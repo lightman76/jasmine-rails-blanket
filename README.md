@@ -1,10 +1,10 @@
-# Jasmine::Rails::Blanket
+# Jasmine-Rails-Blanket
 
-TODO: Write a gem description
+This gem adds blanket code coverage support to the jasmine-rails gem's test runner page.  The code coverage details appear below the test results when you access the jasmine specs page.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application's Gemfile in the development/test group:
 
     gem 'jasmine-rails-blanket'
 
@@ -18,7 +18,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Add the following to your jasmine.yml file
+
+blanketjs_coverage:
+  enabled: true
+
+You can also include any of the config items supported by blanketjs (see https://github.com/alex-seville/blanket/blob/master/src/config.js for options) - just leave off the 'data-' prefixes in the yml config
+Example:
+
+blanketjs_coverage:
+  enabled: true
+  cover-only: "assets_dev/app/"
+  cover-flags: "debug"
+
 
 ## Contributing
 

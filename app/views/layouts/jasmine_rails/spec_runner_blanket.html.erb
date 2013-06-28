@@ -8,7 +8,7 @@
   <%= javascript_include_tag *jasmine_js_files %>
 
   <% if JasmineRails.enable_blanketjs_coverage %>
-    <script type='text/javascript' src='<%= asset_url("blanket.min.js") %>' data-cover-only="<%= JasmineRails.blanketjs_coverage_path %>" data-cover-flags="<%= JasmineRails.blanketjs_flags %>"></script>
+    <script type='text/javascript' src='<%= asset_url("blanket.min.js") %>' <%= raw JasmineRails.get_blanketjs_options %>></script>
     <script type='text/javascript' src='<%= asset_url("blanket-jasmine.js") %>'></script>
   <% end %>
 </head>
